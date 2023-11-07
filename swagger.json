@@ -467,7 +467,9 @@
                 "consumes": [
                     "application/json"
                 ],
-                "produces": [],
+                "produces": [
+                    "application/json"
+                ],
                 "parameters": [
                     {
                         "name": "datasetId",
@@ -2766,7 +2768,6 @@
                 "description": "\nSee the [Import Large Files](https://github.com/microsoft/PowerBI-Developer-Samples/blob/master/PowerShell%20Scripts/Import%20Large%20Files) PowerShell script for an example of using this API.\n\n> [!NOTE]\n> Supported content:\n> - Power BI .pbix files\n> - JSON files (.json)\n> - Excel files (.xlsx)\n> - RDL files (.rdl)\n\n- To import a file, specify the content type **multipart/form-data** in the request headers and encode the file as [form data](https://www.w3.org/TR/html401/interact/forms.html) in the request body.\n- To import an .rdl file, include the file extension in the name specified by `datasetDisplayName`, as described in [URI parameters](/rest/api/power-bi/imports/post-import-in-group#uri-parameters).\n- To import an .xlsx file from OneDrive for Business, include the content type **application/json** in the request headers. Include [ImportInfo](/rest/api/power-bi/imports/post-import-in-group#importinfo) with `filePath` set to the .xlsx file path in the request body.\n- To import large Power BI .pbix files that are between 1 GB and 10 GB in size, see [Create Temporary Upload Location](/rest/api/power-bi/imports/create-temporary-upload-location). This is only supported for Premium capacity workspaces.\n- To create a dataflow from a model.json file, set `datasetDisplayName` to *model.json*, as described in [URI parameters](/rest/api/power-bi/imports/post-import-in-group#uri-parameters).\n\n## Required Scope\n\nDataset.ReadWrite.All\n\n## Limitations\n\n- Dataflows with service principal aren't supported.\n- Importing a Power BI .pbix file from OneDrive isn't supported.\n- Importing a file that has a **protected** sensitivity label isn't supported for service principals.\n<br><br>",
                 "operationId": "Imports_PostImport",
                 "consumes": [
-                    "application/json",
                     "multipart/form-data"
                 ],
                 "produces": [
@@ -4576,7 +4577,9 @@
                 "description": "\n## Required Scope\n\nDataset.ReadWrite.All\n\n## Limitations\n\nThis API call only supports **push datasets**.\n<br><br>",
                 "operationId": "Datasets_PutTableInGroup",
                 "consumes": [],
-                "produces": [],
+                "produces": [
+                    "application/json"
+                ],
                 "parameters": [
                     {
                         "name": "groupId",
@@ -6797,7 +6800,6 @@
                 "description": "\n> [!NOTE]\n> Supported content:\n>\n> - Power BI .pbix files\n> - JSON files (.json)\n> - Excel files (.xlsx)\n> - SQL Server Report Definition Language files (.rdl)\n\n- To import a file, specify the content type **multipart/form-data** in the request headers and encode the file as [form data](https://www.w3.org/TR/html401/interact/forms.html) in the request body.\n- To import an .rdl file, include the file extension in the name specified by `datasetDisplayName`, as described in [URI parameters](/rest/api/power-bi/imports/post-import-in-group#uri-parameters).\n- To import an .xlsx file from OneDrive for Business, include the content type **application/json** in the request headers. Include [ImportInfo](/rest/api/power-bi/imports/post-import-in-group#importinfo) with `filePath` set to the .xlsx file path in the request body.\n- To import large Power BI .pbix files that are between 1 GB and 10 GB in size, see [Create Temporary Upload Location In Group](/rest/api/power-bi/imports/create-temporary-upload-location-in-group) and the [Import Large Files](https://github.com/microsoft/PowerBI-Developer-Samples/blob/master/PowerShell%20Scripts/Import%20Large%20Files) PowerShell script. This is only supported for Premium capacity workspaces.\n- To create a dataflow from a model.json file, set `datasetDisplayName` to *model.json*, as described in [URI parameters](/rest/api/power-bi/imports/post-import-in-group#uri-parameters).\n\n## Permissions\n\nThis API call can be called by a service principal profile. For more information see: [Service principal profiles in Power BI Embedded](/power-bi/developer/embedded/embed-multi-tenancy).\n\n## Required Scope\n\nDataset.ReadWrite.All\n\n## Limitations\n\n- Dataflows with service principal aren't supported.\n- Importing a Power BI .pbix file from OneDrive isn't supported.\n- Importing a file that has a **protected** sensitivity label isn't supported for service principals.\n<br><br>",
                 "operationId": "Imports_PostImportInGroup",
                 "consumes": [
-                    "application/json",
                     "multipart/form-data"
                 ],
                 "produces": [
@@ -16890,7 +16892,9 @@
                 "consumes": [
                     "application/json"
                 ],
-                "produces": [],
+                "produces": [
+                    "application/json"
+                ],
                 "parameters": [
                     {
                         "name": "capacityId",
@@ -19849,6 +19853,9 @@
                 "summary": "Returns a list of scorecards from a workspace.",
                 "operationId": "Scorecards_(Preview)_Get",
                 "description": "\n## Required Scope\n\nDataset.Read.All or Dataset.ReadWrite.All\n<br><br>",
+                "produces":[
+                    "application/json"
+                ],
                 "tags": [
                     "Scorecards_(Preview)"
                 ],
@@ -19935,6 +19942,9 @@
                 "summary": "Creates a new scorecard.",
                 "operationId": "Scorecards_(Preview)_Post",
                 "description": "\n## Required Scope\n\nDataset.ReadWrite.All\n<br><br>",
+                "produces":[
+                    "application/json"
+                ],
                 "tags": [
                     "Scorecards_(Preview)"
                 ],
@@ -20019,6 +20029,9 @@
                 "summary": "Returns a scorecard with ID.",
                 "operationId": "Scorecards_(Preview)_GetByID",
                 "description": "\n## Required Scope\n\nDataset.Read.All or Dataset.ReadWrite.All\n<br><br>",
+                "produces":[
+                    "application/json"
+                ],
                 "tags": [
                     "Scorecards_(Preview)"
                 ],
@@ -20104,6 +20117,9 @@
                 "description": "\n## Required Scope\n\nDataset.ReadWrite.All\n<br><br>",
                 "tags": [
                     "Scorecards_(Preview)"
+                ],
+                "produces": [
+                    "application/json"
                 ],
                 "parameters": [
                     {
@@ -20257,6 +20273,9 @@
                 "tags": [
                     "Goals_(Preview)"
                 ],
+                "produces":[
+                    "application/json"
+                ],
                 "parameters": [
                     {
                         "$ref": "#/parameters/GroupIdParameter"
@@ -20321,6 +20340,9 @@
                 "tags": [
                     "Goals_(Preview)"
                 ],
+                "produces":[
+                    "application/json"
+                ],
                 "parameters": [
                     {
                         "$ref": "#/parameters/GroupIdParameter"
@@ -20383,6 +20405,9 @@
                 "tags": [
                     "Goals_(Preview)"
                 ],
+                "produces":[
+                    "application/json"
+                ],
                 "parameters": [
                     {
                         "$ref": "#/parameters/GroupIdParameter"
@@ -20440,6 +20465,9 @@
                 "description": "\n## Required Scope\n\nDataset.ReadWrite.All\n<br><br>",
                 "tags": [
                     "Goals_(Preview)"
+                ],
+                "produces":[
+                    "application/json"
                 ],
                 "parameters": [
                     {
@@ -20543,6 +20571,9 @@
                 "tags": [
                     "GoalsStatusRules_(Preview)"
                 ],
+                "produces":[
+                    "application/json"
+                ],
                 "parameters": [
                     {
                         "$ref": "#/parameters/GroupIdParameter"
@@ -20615,6 +20646,9 @@
                 "description": "\n## Required Scope\n\nDataset.ReadWrite.All\n<br><br>",
                 "tags": [
                     "GoalsStatusRules_(Preview)"
+                ],
+                "produces":[
+                    "application/json"
                 ],
                 "parameters": [
                     {
@@ -20795,6 +20829,9 @@
                 "tags": [
                     "GoalValues_(Preview)"
                 ],
+                "produces": [
+                    "application/json"
+                ],
                 "parameters": [
                     {
                         "$ref": "#/parameters/GroupIdParameter"
@@ -20868,6 +20905,9 @@
                 "tags": [
                     "GoalValues_(Preview)"
                 ],
+                "produces":[
+                    "application/json"
+                ],
                 "parameters": [
                     {
                         "$ref": "#/parameters/GroupIdParameter"
@@ -20933,6 +20973,9 @@
                 "description": "\n## Required Scope\n\nDataset.Read.All or Dataset.ReadWrite.All\n<br><br>",
                 "tags": [
                     "GoalValues_(Preview)"
+                ],
+                "produces": [
+                    "application/json"
                 ],
                 "parameters": [
                     {
@@ -21010,6 +21053,9 @@
                 "description": "\n## Required Scope\n\nDataset.ReadWrite.All\n<br><br>",
                 "tags": [
                     "GoalValues_(Preview)"
+                ],
+                "produces":[
+                    "application/json"
                 ],
                 "parameters": [
                     {
@@ -21120,6 +21166,9 @@
                 "tags": [
                     "GoalNotes_(Preview)"
                 ],
+                "produces":[
+                    "application/json"
+                ],
                 "parameters": [
                     {
                         "$ref": "#/parameters/GroupIdParameter"
@@ -21187,6 +21236,9 @@
                 "description": "\n## Required Scope\n\nDataset.ReadWrite.All\n<br><br>",
                 "tags": [
                     "GoalNotes_(Preview)"
+                ],
+                "produces":[
+                    "application/json"
                 ],
                 "parameters": [
                     {
@@ -21302,6 +21354,9 @@
                 "description": "\n## Required Scope\n\nDataset.Read.All or Dataset.ReadWrite.All\n<br><br>",
                 "tags": [
                     "Scorecards_(Preview)"
+                ],
+                "produces":[
+                    "application/json"
                 ],
                 "parameters": [
                     {
@@ -21551,6 +21606,9 @@
                 "tags": [
                     "Scorecards_(Preview)"
                 ],
+                "produces":[
+                    "application/json"
+                ],
                 "parameters": [
                     {
                         "$ref": "#/parameters/GroupIdParameter"
@@ -21622,6 +21680,9 @@
                 "description": "\n## Required Scope\n\nDataset.Read.All or Dataset.ReadWrite.All\n<br><br>",
                 "tags": [
                     "Goals_(Preview)"
+                ],
+                "produces":[
+                    "application/json"
                 ],
                 "parameters": [
                     {
@@ -21716,6 +21777,9 @@
                 "tags": [
                     "Goals_(Preview)"
                 ],
+                "produces":[
+                    "application/json"
+                ],
                 "parameters": [
                     {
                         "$ref": "#/parameters/GroupIdParameter"
@@ -21768,6 +21832,9 @@
                 "description": "\n## Required Scope\n\nDataset.ReadWrite.All\n<br><br>",
                 "tags": [
                     "Goals_(Preview)"
+                ],
+                "produces":[
+                    "application/json"
                 ],
                 "parameters": [
                     {
@@ -21822,6 +21889,9 @@
                 "tags": [
                     "Goals_(Preview)"
                 ],
+                "produces":[
+                    "application/json"
+                ],
                 "parameters": [
                     {
                         "$ref": "#/parameters/GroupIdParameter"
@@ -21859,6 +21929,9 @@
                 "description": "\n## Required Scope\n\nDataset.ReadWrite.All\n<br><br>",
                 "tags": [
                     "Goals_(Preview)"
+                ],
+                "produces":[
+                    "application/json"
                 ],
                 "parameters": [
                     {
