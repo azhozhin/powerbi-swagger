@@ -30418,7 +30418,6 @@
                 "columnId": {
                     "description": "The ID for one of the columns on the scorecard control or scorecard Web UI page",
                     "type": "string",
-                    "format": "int32",
                     "enum": [
                         "0",
                         "1",
