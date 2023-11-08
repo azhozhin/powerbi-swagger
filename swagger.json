@@ -30972,7 +30972,8 @@
             "description": "The unique identifier of the scorecard",
             "type": "string",
             "format": "uuid",
-            "required": true
+            "required": true,
+            "x-ms-parameter-location": "method"
         },
         "GoalIdParameter": {
             "name": "goalId",
@@ -30980,7 +30981,8 @@
             "description": "The unique identifier of the goal",
             "type": "string",
             "format": "uuid",
-            "required": true
+            "required": true,
+            "x-ms-parameter-location": "method"
         },
         "GroupIdParameter": {
             "name": "groupId",
@@ -30988,7 +30990,8 @@
             "required": true,
             "type": "string",
             "format": "uuid",
-            "description": "The unique identifier of the workspace"
+            "description": "The unique identifier of the workspace",
+            "x-ms-parameter-location": "method"
         },
         "GoalValueTimestampParameter": {
             "name": "timestamp",
@@ -30996,7 +30999,8 @@
             "type": "string",
             "format": "date",
             "description": "The timestamp for the value of the goal",
-            "required": true
+            "required": true,
+            "x-ms-parameter-location": "method"
         },
         "GoalNoteIdParameter": {
             "name": "noteId",
@@ -31004,7 +31008,8 @@
             "description": "The unique identifier of the goal check-in note",
             "type": "string",
             "format": "uuid",
-            "required": true
+            "required": true,
+            "x-ms-parameter-location": "method"
         }
     },
     "responses": {},
